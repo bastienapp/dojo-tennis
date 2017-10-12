@@ -1,5 +1,6 @@
 import junit.framework.*;
 import org.junit.Test;
+import java.util.HashMap;
 
 public class TennisTest extends TestCase {
 
