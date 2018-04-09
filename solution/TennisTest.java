@@ -1,6 +1,6 @@
 import junit.framework.*;
 import org.junit.Test;
-import java.util.HashMap;
+import org.junit.Assert;
 
 public class TennisTest extends TestCase {
 
@@ -11,34 +11,15 @@ public class TennisTest extends TestCase {
 
 	@Test
 	public void test1() throws Exception {
-		Tennis tennis = new Tennis("a", "b");
-		HashMap scores = new HashMap<String, String>();
-        scores.put(tennis.getPlayer1(), "15");
-        scores.put(tennis.getPlayer2(), "0");
-        int[] points = new int[]{1};
-
-		assertEquals(scores, tennis.getScore(points));
+        String[] tab = {"15", "40"};
+        int[] score = {2, 1, 2, 2};
+		Assert.assertArrayEquals(tab, Tennis.match(score));
 	}
 
-	@Test
+    @Test
 	public void test2() throws Exception {
-		Tennis tennis = new Tennis("a", "b");
-		HashMap scores = new HashMap<String, String>();
-        scores.put(tennis.getPlayer1(), "30");
-        scores.put(tennis.getPlayer2(), "40");
-        int[] points = new int[]{1,2,1,2,2};
-
-		assertEquals(scores, tennis.getScore(points));
-	}
-
-	@Test
-	public void test3() throws Exception {
-		Tennis tennis = new Tennis("a", "b");
-		HashMap scores = new HashMap<String, String>();
-        scores.put(tennis.getPlayer1(), "40");
-        scores.put(tennis.getPlayer2(), "advantage");
-        int[] points = new int[]{1,2,1,2,2,1,1,2,2};
-
-		assertEquals(scores, tennis.getScore(points));
+        String[] tab = {"40", "advantage"};
+        int[] score = {2, 1, 2, 1, 1, 2, 2, 1, 2};
+		Assert.assertArrayEquals(tab, Tennis.match(score));
 	}
 }

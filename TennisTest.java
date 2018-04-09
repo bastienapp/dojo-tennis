@@ -1,6 +1,6 @@
 import junit.framework.*;
 import org.junit.Test;
-import java.util.HashMap;
+import org.junit.Assert;
 
 public class TennisTest extends TestCase {
 
@@ -9,5 +9,5 @@ public class TennisTest extends TestCase {
 		assertEquals(true, true);
 	}
 
-	// TODO
+    // TODO
 }
